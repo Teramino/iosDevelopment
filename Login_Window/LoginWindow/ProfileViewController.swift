@@ -42,10 +42,8 @@ class ProfileViewController: UIViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {        
         if segue.identifier == "ShowDetail" {
-            
             let navi = segue.destinationViewController as! UINavigationController
             let detailProfileController = navi.viewControllers.first as! CreateProfileViewController
             detailProfileController.currentUser = currentUser
@@ -54,7 +52,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        
         if let sourceViewController = sender.sourceViewController as? CreateProfileViewController{
             
             sourceViewController.saveProfile()

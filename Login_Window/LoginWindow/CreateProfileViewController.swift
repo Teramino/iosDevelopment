@@ -56,6 +56,7 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         // Do any additional setup after loading the view.
     }
     
+    // MARK: Segue
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
         if userEmail.text!.isEmpty || userFirstName.text!.isEmpty || userLastName.text!.isEmpty || userPhoneNumber.text!.isEmpty || userImage == nil {
@@ -77,7 +78,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
             currentUser!.photo = userImage.image ?? userImage.image
         }
         else {
-            
             let navi = segue.destinationViewController as! UINavigationController
             let secondScene = navi.viewControllers.first as! ProfileViewController
             
@@ -97,14 +97,11 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     // MARK: UIImagePickerControllerDelegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        
         // Dismiss the picker if the user canceled
-        dismissViewControllerAnimated(true, completion: nil)
-        
+        dismissViewControllerAnimated(true, completion: nil)        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
         // The info dictionary contains multiple representations of the image, and this uses the original.
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -117,7 +114,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     // MARK: Action
     
     @IBAction func createProfile(sender: UIButton) {
-        
         currentUser!.email = userEmail.text ?? ""
         currentUser!.firstName = userFirstName.text ?? ""
         currentUser!.lastName = userLastName.text ?? ""
@@ -127,7 +123,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
-        
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
         
@@ -140,7 +135,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     }
     
     @IBAction func selectImageFromPhotoLibary(sender: UITapGestureRecognizer) {
-        
         // Hide the keyboard
         userEmail.resignFirstResponder()
         userFirstName.resignFirstResponder()
@@ -163,7 +157,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     // MARK: NSCoding
     func saveProfile() {
-        
         let possibleUser = currentUser ?? nil
         
         if possibleUser!.isEqual(nil) {

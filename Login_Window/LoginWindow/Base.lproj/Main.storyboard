@@ -62,6 +62,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="00M-4e-TrR" id="FPg-83-2mv"/>
                         <outlet property="passwordTextField" destination="pK7-aF-Wqz" id="yyx-cE-4UZ"/>
+                        <segue destination="3vL-Sw-YjX" kind="show" identifier="UserMatch" id="SBk-VM-UCA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -176,7 +177,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="342" y="373"/>
+            <point key="canvasLocation" x="110" y="-423"/>
         </scene>
         <!--Profile Window-->
         <scene sceneID="n41-j1-Kd7">
@@ -290,10 +291,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgk-nl-g2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="1121"/>
+            <point key="canvasLocation" x="162" y="1005"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LYI-p5-CvC"/>
+        <segue reference="SBk-VM-UCA"/>
     </inferredMetricsTieBreakers>
 </document>
