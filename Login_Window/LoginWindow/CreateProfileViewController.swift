@@ -11,6 +11,7 @@ import UIKit
 class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var currentUser : Profile?
+    var profiles = [Profile]()
     
     // MARK: Properties
     @IBOutlet weak var userImage: UIImageView!
@@ -77,8 +78,8 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         }
         else {
             
-            var navi = segue.destinationViewController as! UINavigationController
-            var secondScene = navi.viewControllers.first as! ProfileViewController
+            let navi = segue.destinationViewController as! UINavigationController
+            let secondScene = navi.viewControllers.first as! ProfileViewController
             
             secondScene.currentUser = currentUser!
         }
@@ -122,6 +123,7 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         currentUser!.lastName = userLastName.text ?? ""
         currentUser!.phoneNumber = userPhoneNumber.text ?? ""
         currentUser!.photo = userImage.image ?? userImage.image
+        saveProfile()
     }
     
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -157,6 +159,24 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         presentViewController(imagePickerController, animated: true, completion: nil)
         
         
+    }
+    
+    // MARK: NSCoding
+    func saveProfile() {
+        
+        let possibleUser = currentUser ?? nil
+        
+        if possibleUser!.isEqual(nil) {
+            print("no user")
+        }
+        else {
+            profiles.append(possibleUser!)
+            let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(profiles, toFile: Profile.ArchiveURL.path!)
+            
+            if !isSuccessfulSave {
+                print("Failed to save meals...")
+            }
+        }
     }
     
     

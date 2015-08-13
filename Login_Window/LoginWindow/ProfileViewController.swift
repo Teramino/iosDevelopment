@@ -46,8 +46,8 @@ class ProfileViewController: UIViewController {
         
         if segue.identifier == "ShowDetail" {
             
-            var navi = segue.destinationViewController as! UINavigationController
-            var detailProfileController = navi.viewControllers.first as! CreateProfileViewController
+            let navi = segue.destinationViewController as! UINavigationController
+            let detailProfileController = navi.viewControllers.first as! CreateProfileViewController
             detailProfileController.currentUser = currentUser
         }
         
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController {
         
         if let sourceViewController = sender.sourceViewController as? CreateProfileViewController{
             
-            
+            sourceViewController.saveProfile()
             
             currentUser = sourceViewController.currentUser
             

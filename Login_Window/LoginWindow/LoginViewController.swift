@@ -10,7 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var possibleUser : Profile?
+    var user : Profile?
+    var profiles = [Profile]()
     
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +22,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        if let savedProfiles = loadProfiles() {
+            profiles += savedProfiles
+        }
         
     }
     
@@ -38,11 +43,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: Action
     @IBAction func loginAccess(sender: UIButton) {
         // check for valid login
+         user = Profile(email: emailTextField.text!, password: passwordTextField.text!, firstName: nil, lastName: nil, phoneNumber: nil, photo: nil)
         
-        // valid - send to...
-        
+        for possibleCurrentUser in profiles {
+            if user!.email == possibleCurrentUser.email && user!.password == possibleCurrentUser.password {
+                print("WE have a match")
+                // valid - send to...
+                exit(1)
+            }
+        }
         // not valid - send to create a profile window
-        possibleUser = Profile(email: emailTextField.text!, firstName: nil, lastName: nil, password: passwordTextField.text!, phoneNumber: nil, photo: nil)
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -60,11 +70,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var firstScene = segue.destinationViewController as! CreateProfileViewController
+        let firstScene = segue.destinationViewController as! CreateProfileViewController
         
-        firstScene.currentUser = possibleUser
+        firstScene.currentUser = user
+        firstScene.profiles = profiles
     }
     
+    // MARK: NSCoding
+    func loadProfiles() -> [Profile]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Profile.ArchiveURL.path!) as? [Profile]
+    }
     
     
 }
