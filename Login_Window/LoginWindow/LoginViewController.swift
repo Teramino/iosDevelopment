@@ -31,6 +31,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool{
         
         // Hide keyboard
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Action
+    
     @IBAction func loginAccess(sender: UIButton) {
         // check for valid login
         user = Profile(email: emailTextField.text!, password: passwordTextField.text!, firstName: nil, lastName: nil, phoneNumber: nil, photo: nil)
@@ -53,7 +55,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("WE have a match")
                     user = possibleCurrentUser
                     self.performSegueWithIdentifier("UserMatch", sender: self)
-//                    exit(1)
                     return
                 }
                 else {
@@ -90,7 +91,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             profileView.currentUser = user
             
         }
-        else {            
+        else if segue.identifier == "HomeScreen" {
+            
+        }
+        else {
             let firstScene = segue.destinationViewController as! CreateProfileViewController
             
             firstScene.currentUser = user
