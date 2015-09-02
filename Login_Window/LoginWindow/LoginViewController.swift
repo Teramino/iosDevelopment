@@ -28,6 +28,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             profiles += savedProfiles
         }
         
+        printUserLog()
+        
     }
     
     // MARK: UITextFieldDelegate
@@ -105,6 +107,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: NSCoding
     func loadProfiles() -> [Profile]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Profile.ArchiveURL.path!) as? [Profile]
+    }
+    
+    // MARK: Security Check
+    func printUserLog(){
+        
+        for profile in profiles {
+            
+            print("Email: " + profile.email + "\n" + "Password: " + profile.password)
+        }
     }
     
     
