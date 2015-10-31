@@ -490,7 +490,7 @@
                         <viewControllerLayoutGuide type="bottom" id="X0Y-HN-rS3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ioa-uI-oRi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -505,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDU-Br-D1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1859" y="338"/>
+            <point key="canvasLocation" x="1883" y="2874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9U8-kJ-ARW">
@@ -577,6 +577,9 @@
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gkz-jo-fJd" kind="relationship" relationship="rootViewController" id="thG-6b-1yc"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjn-lU-csr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
