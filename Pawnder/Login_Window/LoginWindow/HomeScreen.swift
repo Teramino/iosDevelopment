@@ -10,6 +10,8 @@ import UIKit
 
 class HomeScreen: UIViewController {
     
+    var currentUser : Profile?
+    
      // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -51,7 +53,7 @@ class HomeScreen: UIViewController {
     
     // TO_DO | Modify to be able to handle all segue's in the left menu to respective storyboard`
     func openWindow(){
-        performSegueWithIdentifier("PopupNigga", sender: nil)
+        performSegueWithIdentifier("Profile", sender: nil)
     }
     
     func openWindowTwo(){
@@ -61,6 +63,14 @@ class HomeScreen: UIViewController {
     func toggleMenu(){
         scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
     }
+    // segue function to pass data between windows
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Profile" {
+            let profile = segue.destinationViewController as! ProfileViewController
+           profile.currentUser = currentUser
+        }        
+    }
+
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){

@@ -48,6 +48,12 @@ class ProfileViewController: UIViewController {
             let detailProfileController = navi.viewControllers.first as! CreateProfileViewController
             detailProfileController.currentUser = currentUser
         }
+            // added to pass current user to homescrren
+        else if segue.identifier == "HomeScreen" {
+            let homeController = segue.destinationViewController as! HomeScreen
+            homeController.currentUser = currentUser
+        }
+
         
     }
     
