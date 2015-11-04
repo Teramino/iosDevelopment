@@ -89,7 +89,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let profileView = navi.viewControllers.first as! ProfileViewController
             
             profileView.currentUser = user
-            
         }
         else if segue.identifier == "HomeScreen" {
             

@@ -33,6 +33,8 @@ class HomeScreen: UIViewController {
         // LeftMenu sends openModalWindow
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWindow", name: "openWindow", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWindowTwo", name: "openWindowTwo", object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keepMenuClosed", name: "keepMenuClosed", object: nil)
         
     }
@@ -47,8 +49,13 @@ class HomeScreen: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    // TO_DO | Modify to be able to handle all segue's in the left menu to respective storyboard`
     func openWindow(){
         performSegueWithIdentifier("PopupNigga", sender: nil)
+    }
+    
+    func openWindowTwo(){
+        performSegueWithIdentifier("PopupNiggaTwo", sender: nil)
     }
     
     func toggleMenu(){
