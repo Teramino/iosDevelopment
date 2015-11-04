@@ -27,7 +27,6 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         userEmail.delegate = self
         userFirstName.delegate = self
         userLastName.delegate = self

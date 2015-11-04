@@ -57,12 +57,13 @@ class HomeScreen: UIViewController {
     }
     
     func openWindowTwo(){
-        performSegueWithIdentifier("PopupNiggaTwo", sender: nil)
+        performSegueWithIdentifier("Settings", sender: nil)
     }
     
     func toggleMenu(){
         scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
     }
+    
     // segue function to pass data between windows
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Profile" {
@@ -72,9 +73,15 @@ class HomeScreen: UIViewController {
             //            let profileView = navi.viewControllers.first as! ProfileViewController
             
             // straight connection
-            let profile = segue.destinationViewController as! ProfileViewController
-           profile.currentUser = currentUser
-        }        
+//            let profile = segue.destinationViewController as! ProfileViewController
+//           profile.currentUser = currentUser
+            
+            // Connection to Profile Window via Navigation Controller
+            let navi = segue.destinationViewController as! UINavigationController
+            let profileView = navi.viewControllers.first as! ProfileViewController
+            
+            profileView.currentUser = currentUser
+        }
     }
 
     
