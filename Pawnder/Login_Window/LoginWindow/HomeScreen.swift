@@ -66,6 +66,12 @@ class HomeScreen: UIViewController {
     // segue function to pass data between windows
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Profile" {
+            
+            // using the navi pathway
+            //            let navi = segue.destinationViewController as! UINavigationController
+            //            let profileView = navi.viewControllers.first as! ProfileViewController
+            
+            // straight connection
             let profile = segue.destinationViewController as! ProfileViewController
            profile.currentUser = currentUser
         }        

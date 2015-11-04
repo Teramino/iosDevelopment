@@ -85,13 +85,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UserMatch" {
+            let navi = segue.destinationViewController as! UINavigationController
+            let profileView = navi.viewControllers.first as! ProfileViewController
             
-            // using the navi pathway
-//            let navi = segue.destinationViewController as! UINavigationController
-//            let profileView = navi.viewControllers.first as! ProfileViewController
-            
-            // straight connection
-            let profileView = segue.destinationViewController as! ProfileViewController
             profileView.currentUser = user
         }
         else if segue.identifier == "HomeScreen" {
