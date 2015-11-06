@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    
+    // MARK: Properties
     var currentUser : Profile?
     
     @IBOutlet weak var userEmail: UILabel!

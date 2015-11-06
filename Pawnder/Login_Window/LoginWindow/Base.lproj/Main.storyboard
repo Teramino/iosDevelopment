@@ -135,7 +135,7 @@
                                     <segue destination="3vL-Sw-YjX" kind="show" id="mIA-if-3ik"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
                                 <rect key="frame" x="180" y="72" width="240" height="128"/>
                                 <animations/>
                                 <gestureRecognizers/>
@@ -372,55 +372,67 @@
                     <size key="freeformSize" width="568" height="568"/>
                     <connections>
                         <outlet property="scrollView" destination="VPk-44-gxD" id="V01-kh-MeV"/>
-                        <segue destination="hOF-dx-gYb" kind="presentation" identifier="Settings" id="7MX-5Y-sg6"/>
                         <segue destination="3vL-Sw-YjX" kind="show" identifier="Profile" id="pxJ-ey-sql"/>
+                        <segue destination="ee9-Km-I9x" kind="presentation" identifier="Settings" id="QCm-G7-Rib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxr-wE-nz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56" y="737"/>
         </scene>
-        <!--Temp View Controller-->
-        <scene sceneID="mb1-dn-2ve">
+        <!--Settings View Controller-->
+        <scene sceneID="fFb-F2-9Tb">
             <objects>
-                <viewController id="hOF-dx-gYb" customClass="TempViewController" customModule="LoginWindow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ee9-Km-I9x" customClass="SettingsViewController" customModule="LoginWindow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="H21-KW-Gma"/>
-                        <viewControllerLayoutGuide type="bottom" id="srO-0M-8Tx"/>
+                        <viewControllerLayoutGuide type="top" id="3Uo-FN-EDo"/>
+                        <viewControllerLayoutGuide type="bottom" id="er9-J7-8Rg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dv7-Ke-5TT">
+                    <view key="view" contentMode="scaleToFill" id="b7H-yk-Gqw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fz-mW-wPO">
-                                <rect key="frame" x="529" y="20" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnl-Q6-IQz">
+                                <rect key="frame" x="539" y="28" width="37" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="close:" destination="hOF-dx-gYb" eventType="touchUpInside" id="gKZ-UQ-DxH"/>
+                                    <action selector="doneButton:" destination="ee9-Km-I9x" eventType="touchUpInside" id="W6D-B6-oTC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We got Menus!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-PB-oR2">
-                                <rect key="frame" x="172" y="245" width="256" height="110"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpG-Bc-2rO">
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.010051519910000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Delete Profile"/>
+                                <connections>
+                                    <action selector="deleteProfileButton:" destination="ee9-Km-I9x" eventType="touchUpInside" id="mDg-PU-8bM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieT-4K-Aox">
+                                <rect key="frame" x="20" y="486" width="560" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="ee9-Km-I9x" eventType="touchUpInside" id="wWx-WQ-EN1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pcQ-PB-oR2" firstAttribute="centerX" secondItem="dv7-Ke-5TT" secondAttribute="centerX" id="9OL-JB-MvS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4Fz-mW-wPO" secondAttribute="trailing" constant="12" id="D8B-7A-gPz"/>
-                            <constraint firstItem="4Fz-mW-wPO" firstAttribute="top" secondItem="H21-KW-Gma" secondAttribute="bottom" id="Hid-Zd-foA"/>
-                            <constraint firstItem="pcQ-PB-oR2" firstAttribute="centerY" secondItem="dv7-Ke-5TT" secondAttribute="centerY" id="ynx-dh-usv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rnl-Q6-IQz" secondAttribute="trailing" constant="12" id="COi-eG-GLy"/>
+                            <constraint firstItem="ieT-4K-Aox" firstAttribute="leading" secondItem="b7H-yk-Gqw" secondAttribute="leadingMargin" id="LWW-AI-qON"/>
+                            <constraint firstItem="KpG-Bc-2rO" firstAttribute="top" secondItem="ieT-4K-Aox" secondAttribute="bottom" constant="34" id="MB7-t2-AYV"/>
+                            <constraint firstItem="ieT-4K-Aox" firstAttribute="trailing" secondItem="b7H-yk-Gqw" secondAttribute="trailingMargin" id="VCw-lU-5x8"/>
+                            <constraint firstItem="KpG-Bc-2rO" firstAttribute="leading" secondItem="b7H-yk-Gqw" secondAttribute="leadingMargin" id="Vfy-bx-MRg"/>
+                            <constraint firstItem="er9-J7-8Rg" firstAttribute="top" secondItem="KpG-Bc-2rO" secondAttribute="bottom" constant="20" id="i3N-AI-NZr"/>
+                            <constraint firstItem="KpG-Bc-2rO" firstAttribute="trailing" secondItem="b7H-yk-Gqw" secondAttribute="trailingMargin" id="vwe-zQ-WP4"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P3W-lH-8WT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P66-8j-qhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1202" y="-435"/>
+            <point key="canvasLocation" x="1178" y="641"/>
         </scene>
         <!--Left Menu Table View Controller-->
         <scene sceneID="H4b-nv-EmY">
@@ -439,7 +451,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Hitta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcB-Dl-9a8">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcB-Dl-9a8">
                                             <rect key="frame" x="27" y="0.0" width="188" height="44"/>
                                             <animations/>
                                             <accessibility key="accessibilityConfiguration" label=""/>
@@ -588,7 +600,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pxJ-ey-sql"/>
-        <segue reference="ZXb-wx-vWN"/>
+        <segue reference="LYI-p5-CvC"/>
+        <segue reference="mIA-if-3ik"/>
     </inferredMetricsTieBreakers>
 </document>

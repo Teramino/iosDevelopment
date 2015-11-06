@@ -18,11 +18,10 @@
 		349800C51B60D33F0091B21B /* LoginWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349800C41B60D33F0091B21B /* LoginWindowTests.swift */; };
 		34B4913A1B850AB800ABD28A /* TabVCTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B491391B850AB800ABD28A /* TabVCTemplate.swift */; };
 		34B4913C1B8517C000ABD28A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4913B1B8517C000ABD28A /* TableViewController.swift */; };
-		34FDDFE61B866A50002750B4 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDDFE51B866A50002750B4 /* TempViewController.swift */; };
 		34FDDFE81B866AFE002750B4 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */; };
 		34FEAE291B7D30BF00D158AB /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE281B7D30BF00D158AB /* HomeScreen.swift */; };
 		34FEAE2B1B7D4B3300D158AB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */; };
-		34FEAE2D1B7D4BB500D158AB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE2C1B7D4BB500D158AB /* SecondViewController.swift */; };
+		91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91694CE61BEC2A2400199056 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +51,10 @@
 		34B491391B850AB800ABD28A /* TabVCTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabVCTemplate.swift; sourceTree = "<group>"; };
 		34B4913B1B8517C000ABD28A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		34E7BC851B68896200F361FA /* Testing_Login.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing_Login.playground; sourceTree = "<group>"; };
-		34FDDFE51B866A50002750B4 /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		34FEAE281B7D30BF00D158AB /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		34FEAE2C1B7D4BB500D158AB /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		91694CE61BEC2A2400199056 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +131,10 @@
 		34FDDFE41B865756002750B4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				91694CE61BEC2A2400199056 /* SettingsViewController.swift */,
 				34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */,
-				34FDDFE51B866A50002750B4 /* TempViewController.swift */,
 				34B4913B1B8517C000ABD28A /* TableViewController.swift */,
 				34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */,
-				34FEAE2C1B7D4BB500D158AB /* SecondViewController.swift */,
 				34FEAE281B7D30BF00D158AB /* HomeScreen.swift */,
 				34B491391B850AB800ABD28A /* TabVCTemplate.swift */,
 			);
@@ -193,6 +190,7 @@
 				TargetAttributes = {
 					349800AB1B60D33F0091B21B = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = E55U2BKYV7;
 					};
 					349800BF1B60D33F0091B21B = {
 						CreatedOnToolsVersion = 7.0;
@@ -244,13 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34FEAE2D1B7D4BB500D158AB /* SecondViewController.swift in Sources */,
 				349800B21B60D33F0091B21B /* LoginViewController.swift in Sources */,
 				344A38EC1B7C4B9600B85DA8 /* Profile.swift in Sources */,
+				91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */,
 				34B4913C1B8517C000ABD28A /* TableViewController.swift in Sources */,
 				34B4913A1B850AB800ABD28A /* TabVCTemplate.swift in Sources */,
 				34FDDFE81B866AFE002750B4 /* LeftMenuTableViewController.swift in Sources */,
-				34FDDFE61B866A50002750B4 /* TempViewController.swift in Sources */,
 				34FEAE291B7D30BF00D158AB /* HomeScreen.swift in Sources */,
 				349800B01B60D33F0091B21B /* AppDelegate.swift in Sources */,
 				346EABAF1B6F666F00C1099A /* ProfileViewController.swift in Sources */,
@@ -384,11 +381,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LoginWindow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -396,11 +396,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LoginWindow/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
