@@ -12,7 +12,7 @@ class HomeScreen: UIViewController {
     
     var currentUser : Profile?
     
-     // Need a handle to the scrollView to open and close the menu
+    // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
     
     
@@ -73,17 +73,21 @@ class HomeScreen: UIViewController {
             //            let profileView = navi.viewControllers.first as! ProfileViewController
             
             // straight connection
-//            let profile = segue.destinationViewController as! ProfileViewController
-//           profile.currentUser = currentUser
+            //            let profile = segue.destinationViewController as! ProfileViewController
+            //           profile.currentUser = currentUser
             
             // Connection to Profile Window via Navigation Controller
             let navi = segue.destinationViewController as! UINavigationController
             let profileView = navi.viewControllers.first as! ProfileViewController
-            
             profileView.currentUser = currentUser
         }
+        else if segue.identifier == "Settings" {
+            let settings = segue.destinationViewController as! SettingTableViewController
+            settings.currentUser = currentUser
+        }
+        
     }
-
+    
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){
@@ -92,7 +96,7 @@ class HomeScreen: UIViewController {
     
     func keepMenuClosed(){
         print("Closing")
-            self.closeMenu(false)
+        self.closeMenu(false)
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
@@ -112,6 +116,6 @@ class HomeScreen: UIViewController {
             }
         }
     }
-
+    
     
 }
