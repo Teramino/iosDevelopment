@@ -55,8 +55,6 @@ class ProfileViewController: UIViewController {
             let homeController = segue.destinationViewController as! HomeScreen
             homeController.currentUser = currentUser
         }
-
-        
     }
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {

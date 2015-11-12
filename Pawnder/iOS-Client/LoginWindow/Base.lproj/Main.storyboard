@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1859" y="-83"/>
+            <point key="canvasLocation" x="-3619" y="-1891"/>
         </scene>
         <!--Create Profile Window-->
         <scene sceneID="D2S-BS-md2">
@@ -135,8 +135,8 @@
                                     <segue destination="3vL-Sw-YjX" kind="show" id="mIA-if-3ik"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
-                                <rect key="frame" x="180" y="72" width="240" height="96"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
+                                <rect key="frame" x="180" y="72" width="240" height="128"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -190,7 +190,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-754" y="-943"/>
+            <point key="canvasLocation" x="-1946" y="-2631"/>
         </scene>
         <!--Profile Window-->
         <scene sceneID="n41-j1-Kd7">
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vHO-ql-riq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="685"/>
+            <point key="canvasLocation" x="-1946" y="-691"/>
         </scene>
         <!--Home Screen-->
         <scene sceneID="w9e-vb-PPk">
@@ -303,7 +303,7 @@
                                             <constraint firstAttribute="width" constant="260" id="0eK-7B-Aa1"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="TeF-VN-enT" kind="embed" id="rV0-ar-Nfm"/>
+                                            <segue destination="TeF-VN-enT" kind="embed" identifier="LeftMenuTableSegue" id="rV0-ar-Nfm"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTT-rr-OJu" userLabel="Right Container View">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxr-wE-nz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1820" y="765"/>
+            <point key="canvasLocation" x="-3644" y="-1091"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="fFb-F2-9Tb">
@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P66-8j-qhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="2237"/>
+            <point key="canvasLocation" x="-2861" y="653"/>
         </scene>
         <!--Left Menu Table View Controller-->
         <scene sceneID="H4b-nv-EmY">
@@ -448,7 +448,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <animations/>
                             <connections>
-                                <segue destination="Oy3-lb-lrv" kind="embed" id="KN6-dP-tpG"/>
+                                <segue destination="Oy3-lb-lrv" kind="embed" identifier="LeftMenuProfileBarSegue" id="KN6-dP-tpG"/>
                             </connections>
                         </containerView>
                         <prototypes>
@@ -500,7 +500,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfK-O8-Yd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-991" y="1082"/>
+            <point key="canvasLocation" x="-3644" y="-187"/>
         </scene>
         <!--Setting Table View Controller-->
         <scene sceneID="Gb2-ZV-Yyl">
@@ -566,7 +566,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWa-IR-PoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="2250"/>
+            <point key="canvasLocation" x="-2861" y="-166"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="lkO-ri-HPx">
@@ -592,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDU-Br-D1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1329" y="2250"/>
+            <point key="canvasLocation" x="-2861" y="1522"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9U8-kJ-ARW">
@@ -611,7 +611,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgO-cr-sxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2952" y="2250"/>
+            <point key="canvasLocation" x="-4535" y="-6"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BN0-oi-Fm6">
@@ -631,7 +631,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgr-vF-l9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738" y="-91"/>
+            <point key="canvasLocation" x="-1946" y="-1627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4j6-VU-BhN">
@@ -650,7 +650,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgk-nl-g2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1100" y="-556"/>
+            <point key="canvasLocation" x="-468" y="-203"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="wTI-fr-Lnf">
@@ -670,7 +670,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjn-lU-csr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2136" y="2250"/>
+            <point key="canvasLocation" x="-4535" y="1186"/>
         </scene>
         <!--Left Menu Profile Bar-->
         <scene sceneID="INR-gS-b0z">
@@ -706,12 +706,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYm-SD-dIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-686" y="967"/>
+            <point key="canvasLocation" x="-3644" y="323"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SBk-VM-UCA"/>
-        <segue reference="LYI-p5-CvC"/>
-        <segue reference="aZB-4I-IiQ"/>
+        <segue reference="pxJ-ey-sql"/>
+        <segue reference="AbC-Yi-2Bf"/>
+        <segue reference="ZXb-wx-vWN"/>
     </inferredMetricsTieBreakers>
 </document>

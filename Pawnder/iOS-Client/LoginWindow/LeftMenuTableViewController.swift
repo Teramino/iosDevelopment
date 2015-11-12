@@ -10,6 +10,7 @@ import UIKit
 
 class LeftMenuTableViewController: UITableViewController {
     
+    var currentUser : Profile?
     let menuOptions = ["Profile", "Settings"]
     
     override func viewDidLoad() {
@@ -64,7 +65,14 @@ class LeftMenuTableViewController: UITableViewController {
         
     }
     
-    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Sends current user data to LeftMenuProfileBar's View Controller
+        if segue.identifier == "LeftMenuProfileBarSegue" {
+            let profileBar = segue.destinationViewController as! LeftMenuProfileBar
+            profileBar.currentUser = currentUser
+        }
+    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -100,15 +108,4 @@ class LeftMenuTableViewController: UITableViewController {
     return true
     }
     */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

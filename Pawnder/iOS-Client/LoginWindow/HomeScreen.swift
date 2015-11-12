@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeScreen: UIViewController {
-    
     var currentUser : Profile?
     
     // Need a handle to the scrollView to open and close the menu
@@ -64,30 +63,38 @@ class HomeScreen: UIViewController {
         scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
     }
     
-    // segue function to pass data between windows
+    // Function to pass data between Storyboards via its respective segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Sends current user data to Profile's View Controller
         if segue.identifier == "Profile" {
-            
-            // using the navi pathway
-            //            let navi = segue.destinationViewController as! UINavigationController
-            //            let profileView = navi.viewControllers.first as! ProfileViewController
-            
-            // straight connection
-            //            let profile = segue.destinationViewController as! ProfileViewController
-            //           profile.currentUser = currentUser
-            
-            // Connection to Profile Window via Navigation Controller
             let navi = segue.destinationViewController as! UINavigationController
             let profileView = navi.viewControllers.first as! ProfileViewController
             profileView.currentUser = currentUser
+            print("Profile Segue Test")
         }
+        // Sends current user data to Setting's View Controller
         else if segue.identifier == "Settings" {
             let settings = segue.destinationViewController as! SettingTableViewController
             settings.currentUser = currentUser
+            print("Settings Segue Test")
         }
-        
+        // Sends current user data to LeftMenuTable's View Controller
+        else if segue.identifier == "LeftMenuTableSegue" {
+            let leftMenu = segue.destinationViewController as! LeftMenuTableViewController
+            leftMenu.currentUser = currentUser
+            print("LeftMenu Segue Test")
+        }
     }
     
+    func getUserFirstName() -> String {
+        let firstName = currentUser?.firstName
+        return firstName!
+    }
+    
+    func getUserLastName() -> String {
+        let lastName = currentUser?.lastName
+        return lastName!
+    }
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){
