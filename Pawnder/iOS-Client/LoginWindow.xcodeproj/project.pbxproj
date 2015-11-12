@@ -18,11 +18,12 @@
 		349800C51B60D33F0091B21B /* LoginWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349800C41B60D33F0091B21B /* LoginWindowTests.swift */; };
 		34B4913A1B850AB800ABD28A /* TabVCTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B491391B850AB800ABD28A /* TabVCTemplate.swift */; };
 		34B4913C1B8517C000ABD28A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4913B1B8517C000ABD28A /* TableViewController.swift */; };
-		34B6A68A1BED306F00A35BAF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6A6891BED306F00A35BAF /* SettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		34B6A68A1BED306F00A35BAF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B6A6891BED306F00A35BAF /* SettingTableViewController.swift */; };
 		34FDDFE81B866AFE002750B4 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */; };
 		34FEAE291B7D30BF00D158AB /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE281B7D30BF00D158AB /* HomeScreen.swift */; };
 		34FEAE2B1B7D4B3300D158AB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */; };
 		91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91694CE61BEC2A2400199056 /* SettingsViewController.swift */; };
+		91F4ABCA1BF4174C00439016 /* LeftMenuProfileBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		34FEAE281B7D30BF00D158AB /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		91694CE61BEC2A2400199056 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuProfileBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */,
 				34FEAE281B7D30BF00D158AB /* HomeScreen.swift */,
 				34B491391B850AB800ABD28A /* TabVCTemplate.swift */,
+				91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			files = (
 				34B6A68A1BED306F00A35BAF /* SettingTableViewController.swift in Sources */,
 				349800B21B60D33F0091B21B /* LoginViewController.swift in Sources */,
+				91F4ABCA1BF4174C00439016 /* LeftMenuProfileBar.swift in Sources */,
 				344A38EC1B7C4B9600B85DA8 /* Profile.swift in Sources */,
 				91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */,
 				34B4913C1B8517C000ABD28A /* TableViewController.swift in Sources */,
