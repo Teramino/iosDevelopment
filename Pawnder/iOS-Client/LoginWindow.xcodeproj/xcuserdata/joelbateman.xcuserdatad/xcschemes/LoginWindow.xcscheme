@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "349800AB1B60D33F0091B21B"
-               BuildableName = "Pawnder.app"
+               BuildableName = "LoginWindow.app"
                BlueprintName = "LoginWindow"
                ReferencedContainer = "container:LoginWindow.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "349800AB1B60D33F0091B21B"
-            BuildableName = "Pawnder.app"
+            BuildableName = "LoginWindow.app"
             BlueprintName = "LoginWindow"
             ReferencedContainer = "container:LoginWindow.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "349800AB1B60D33F0091B21B"
-            BuildableName = "Pawnder.app"
+            BuildableName = "LoginWindow.app"
             BlueprintName = "LoginWindow"
             ReferencedContainer = "container:LoginWindow.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "349800AB1B60D33F0091B21B"
-            BuildableName = "Pawnder.app"
+            BuildableName = "LoginWindow.app"
             BlueprintName = "LoginWindow"
             ReferencedContainer = "container:LoginWindow.xcodeproj">
          </BuildableReference>

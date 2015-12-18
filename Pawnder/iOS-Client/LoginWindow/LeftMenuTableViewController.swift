@@ -50,7 +50,7 @@ class LeftMenuTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             // ContainerVC.swift listens for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openWindow", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("openWindowThree", object: nil)
             print("Entered case 0")
         case 1:
             NSNotificationCenter.defaultCenter().postNotificationName("openWindowTwo", object: nil)

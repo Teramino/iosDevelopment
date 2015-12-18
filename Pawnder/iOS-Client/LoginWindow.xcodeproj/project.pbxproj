@@ -22,6 +22,9 @@
 		34FDDFE81B866AFE002750B4 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */; };
 		34FEAE291B7D30BF00D158AB /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE281B7D30BF00D158AB /* HomeScreen.swift */; };
 		34FEAE2B1B7D4B3300D158AB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */; };
+		9146A1FA1C2400AE00A4B2FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146A1F91C2400AE00A4B2FC /* ViewController.swift */; };
+		9146A1FC1C24019200A4B2FC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146A1FB1C24019200A4B2FC /* ChatViewController.swift */; };
+		9146A1FE1C24026800A4B2FC /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146A1FD1C24026800A4B2FC /* MPCManager.swift */; };
 		91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91694CE61BEC2A2400199056 /* SettingsViewController.swift */; };
 		91F4ABCA1BF4174C00439016 /* LeftMenuProfileBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		34FDDFE71B866AFE002750B4 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		34FEAE281B7D30BF00D158AB /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		34FEAE2A1B7D4B3300D158AB /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		9146A1F91C2400AE00A4B2FC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9146A1FB1C24019200A4B2FC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9146A1FD1C24026800A4B2FC /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		91694CE61BEC2A2400199056 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuProfileBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +106,7 @@
 		349800AE1B60D33F0091B21B /* LoginWindow */ = {
 			isa = PBXGroup;
 			children = (
+				9146A1F81C23FFCD00A4B2FC /* Chat */,
 				34FDDFE41B865756002750B4 /* Home */,
 				34FDDFE31B8656EF002750B4 /* Profile */,
 				34E7BC851B68896200F361FA /* Testing_Login.playground */,
@@ -145,6 +152,16 @@
 				91F4ABC91BF4174C00439016 /* LeftMenuProfileBar.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		9146A1F81C23FFCD00A4B2FC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9146A1F91C2400AE00A4B2FC /* ViewController.swift */,
+				9146A1FB1C24019200A4B2FC /* ChatViewController.swift */,
+				9146A1FD1C24026800A4B2FC /* MPCManager.swift */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +269,9 @@
 				349800B21B60D33F0091B21B /* LoginViewController.swift in Sources */,
 				91F4ABCA1BF4174C00439016 /* LeftMenuProfileBar.swift in Sources */,
 				344A38EC1B7C4B9600B85DA8 /* Profile.swift in Sources */,
+				9146A1FA1C2400AE00A4B2FC /* ViewController.swift in Sources */,
 				91694CE71BEC2A2400199056 /* SettingsViewController.swift in Sources */,
+				9146A1FE1C24026800A4B2FC /* MPCManager.swift in Sources */,
 				34B4913C1B8517C000ABD28A /* TableViewController.swift in Sources */,
 				34B4913A1B850AB800ABD28A /* TabVCTemplate.swift in Sources */,
 				34FDDFE81B866AFE002750B4 /* LeftMenuTableViewController.swift in Sources */,
@@ -260,6 +279,7 @@
 				349800B01B60D33F0091B21B /* AppDelegate.swift in Sources */,
 				346EABAF1B6F666F00C1099A /* ProfileViewController.swift in Sources */,
 				342BF0FF1B65E97900DDEC70 /* CreateProfileViewController.swift in Sources */,
+				9146A1FC1C24019200A4B2FC /* ChatViewController.swift in Sources */,
 				34FEAE2B1B7D4B3300D158AB /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,6 +36,8 @@ class HomeScreen: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWindowTwo", name: "openWindowTwo", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWindowThree", name: "openWindowThree", object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keepMenuClosed", name: "keepMenuClosed", object: nil)
         
     }
@@ -57,6 +59,10 @@ class HomeScreen: UIViewController {
     
     func openWindowTwo(){
         performSegueWithIdentifier("Settings", sender: nil)
+    }
+    
+    func openWindowThree(){
+        performSegueWithIdentifier("Chat", sender: nil)
     }
     
     func toggleMenu(){
