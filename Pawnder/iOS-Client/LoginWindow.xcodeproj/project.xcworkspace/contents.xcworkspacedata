@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LoginWindow.xcodeproj">
+      location = "self:/Users/joelbateman/Desktop/iosDevelopment/Pawnder/iOS-Client/LoginWindow.xcodeproj">
    </FileRef>
 </Workspace>

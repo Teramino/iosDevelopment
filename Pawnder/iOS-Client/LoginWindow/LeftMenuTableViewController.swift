@@ -11,7 +11,7 @@ import UIKit
 class LeftMenuTableViewController: UITableViewController {
     
     var currentUser : Profile?
-    let menuOptions = ["Profile", "Settings"]
+    let menuOptions = ["Chat", "Settings"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

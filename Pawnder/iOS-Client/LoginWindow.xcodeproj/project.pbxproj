@@ -47,7 +47,7 @@
 		349800B61B60D33F0091B21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349800B91B60D33F0091B21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		349800BB1B60D33F0091B21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		349800C01B60D33F0091B21B /* LoginWindowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWindowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349800C01B60D33F0091B21B /* LoginWindow.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginWindow.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349800C41B60D33F0091B21B /* LoginWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWindowTests.swift; sourceTree = "<group>"; };
 		349800C61B60D33F0091B21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B491391B850AB800ABD28A /* TabVCTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabVCTemplate.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				349800AC1B60D33F0091B21B /* LoginWindow.app */,
-				349800C01B60D33F0091B21B /* LoginWindowTests.xctest */,
+				349800C01B60D33F0091B21B /* LoginWindow.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			);
 			name = LoginWindowTests;
 			productName = LoginWindowTests;
-			productReference = 349800C01B60D33F0091B21B /* LoginWindowTests.xctest */;
+			productReference = 349800C01B60D33F0091B21B /* LoginWindow.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -395,7 +395,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindow;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginWindow;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -410,7 +410,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindow;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginWindow;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -422,7 +422,7 @@
 				INFOPLIST_FILE = LoginWindowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginWindow;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginWindow.app/LoginWindow";
 			};
 			name = Debug;
@@ -434,7 +434,7 @@
 				INFOPLIST_FILE = LoginWindowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Alpha.LoginWindowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LoginWindow;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginWindow.app/LoginWindow";
 			};
 			name = Release;
