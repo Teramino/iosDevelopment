@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -97,7 +98,7 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         // Dismiss the picker if the user canceled
-        dismissViewControllerAnimated(true, completion: nil)        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -112,7 +113,40 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     // MARK: Action
     
-    @IBAction func createProfile(sender: UIButton) {
+    @IBAction func createProfile(sender: UIButton)
+    {
+        var password = currentUser!.password
+        var email = currentUser!.email
+        var finalEmail = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        // Run a spinner to show a task in progress
+        var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+        spinner.startAnimating()
+        
+        var newUser = PFUser()
+        newUser.username = email
+        newUser.password = password
+        newUser.email = finalEmail
+        
+        // Sign up the user asynchronously
+        newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+            
+            // Stop the spinner
+            spinner.stopAnimating()
+            if ((error) != nil)
+            {
+                var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+            }
+            else
+            {
+                var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+//                saveProfile()
+            }
+        })
+
+ 
         currentUser!.email = userEmail.text ?? ""
         currentUser!.firstName = userFirstName.text ?? ""
         currentUser!.lastName = userLastName.text ?? ""
@@ -162,12 +196,26 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
             print("no user")
         }
         else {
+            
+            // save to database
+            let profileObject = PFObject(className:"Users")
+            profileObject["email"] = possibleUser?.email
+            profileObject["password"] = possibleUser?.password
+            profileObject["firstName"] = possibleUser?.firstName
+            profileObject["lastName"] = possibleUser?.lastName
+            profileObject["phoneNumber"] = possibleUser?.phoneNumber
+            profileObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                print("Object has been saved.")
+            }
+            
+            // old save
             profiles.append(possibleUser!)
             let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(profiles, toFile: Profile.ArchiveURL.path!)
             
             if !isSuccessfulSave {
                 print("Failed to save meals...")
             }
+            
         }
     }
     

@@ -41,12 +41,20 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-Mg-1Nx">
-                                <rect key="frame" x="283" y="275" width="45" height="30"/>
+                                <rect key="frame" x="278" y="275" width="45" height="30"/>
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="loginAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YX-iz-YQi"/>
                                     <segue destination="J9e-4d-aXe" kind="show" id="LYI-p5-CvC"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Vy-5Em">
+                                <rect key="frame" x="243" y="331" width="115" height="30"/>
+                                <state key="normal" title="Forgot Password"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-Bm-Yjp">
+                                <rect key="frame" x="277" y="383" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -58,6 +66,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ilf-Mg-1Nx" secondAttribute="trailing" id="erG-Ln-A0U"/>
                             <constraint firstItem="ilf-Mg-1Nx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kgS-pL-tc0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="2Rz-Bm-Yjp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="6Ud-AR-eoK"/>
                     <connections>
@@ -125,7 +138,7 @@
                                     <segue destination="3vL-Sw-YjX" kind="show" id="mIA-if-3ik"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-y0-71S">
                                 <rect key="frame" x="180" y="72" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -914,8 +927,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pxJ-ey-sql"/>
+        <segue reference="SBk-VM-UCA"/>
+        <segue reference="LYI-p5-CvC"/>
         <segue reference="AbC-Yi-2Bf"/>
-        <segue reference="ZXb-wx-vWN"/>
     </inferredMetricsTieBreakers>
 </document>
