@@ -40,14 +40,6 @@
                                     <constraint firstAttribute="trailing" secondItem="00M-4e-TrR" secondAttribute="trailing" id="oFR-NG-RX2"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-Mg-1Nx">
-                                <rect key="frame" x="278" y="275" width="45" height="30"/>
-                                <state key="normal" title="LOGIN"/>
-                                <connections>
-                                    <action selector="loginAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YX-iz-YQi"/>
-                                    <segue destination="J9e-4d-aXe" kind="show" id="LYI-p5-CvC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-Vy-5Em">
                                 <rect key="frame" x="243" y="331" width="115" height="30"/>
                                 <state key="normal" title="Forgot Password"/>
@@ -55,6 +47,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-Bm-Yjp">
                                 <rect key="frame" x="277" y="383" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-Mg-1Nx">
+                                <rect key="frame" x="278" y="275" width="45" height="30"/>
+                                <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="loginAccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YX-iz-YQi"/>
+                                    <segue destination="J9e-4d-aXe" kind="show" id="LYI-p5-CvC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

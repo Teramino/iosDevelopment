@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController
+{
     
     
     // MARK: Properties
@@ -21,7 +22,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         let email = currentUser?.email ?? ""
@@ -44,21 +46,26 @@ class ProfileViewController: UIViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {        
-        if segue.identifier == "ShowDetail" {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowDetail"
+        {
             let navi = segue.destinationViewController as! UINavigationController
             let detailProfileController = navi.viewControllers.first as! CreateProfileViewController
             detailProfileController.currentUser = currentUser
         }
             // added to pass current user to homescrren
-        else if segue.identifier == "HomeScreen" {
+        else if segue.identifier == "HomeScreen"
+        {
             let homeController = segue.destinationViewController as! HomeScreen
             homeController.currentUser = currentUser
         }
     }
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as? CreateProfileViewController{
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue)
+    {
+        if let sourceViewController = sender.sourceViewController as? CreateProfileViewController
+        {
             
             sourceViewController.saveProfile()
             

@@ -9,7 +9,8 @@
 import UIKit
 import Parse
 
-class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
     
     var currentUser : Profile?
     var profiles = [Profile]()
@@ -25,7 +26,8 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         userEmail.delegate = self
@@ -45,10 +47,12 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         userImage.image = photo
         
         // if these arent empty disable create button - once photos is able to be added  take out ! on userImage
-        if !userFirstName.text!.isEmpty || !userLastName.text!.isEmpty || !userPhoneNumber.text!.isEmpty || !userImage.image!.isEqual(UIImage(named: "defaultPhoto"))  {
+        if !userFirstName.text!.isEmpty || !userLastName.text!.isEmpty || !userPhoneNumber.text!.isEmpty || !userImage.image!.isEqual(UIImage(named: "defaultPhoto"))
+        {
             create.hidden = true
         }
-        else {
+        else
+        {
             create.hidden = false
         }
         
@@ -57,9 +61,11 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     }
     
     // MARK: Segue
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
+    {
         
-        if userEmail.text!.isEmpty || userFirstName.text!.isEmpty || userLastName.text!.isEmpty || userPhoneNumber.text!.isEmpty || userImage == nil {
+        if userEmail.text!.isEmpty || userFirstName.text!.isEmpty || userLastName.text!.isEmpty || userPhoneNumber.text!.isEmpty || userImage == nil
+        {
             print("Fields are empty... Please fill in!")
             return false
         }
@@ -69,15 +75,18 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if save === sender {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if save === sender
+        {
             currentUser!.email = userEmail.text ?? ""
             currentUser!.firstName = userFirstName.text ?? ""
             currentUser!.lastName = userLastName.text ?? ""
             currentUser!.phoneNumber = userPhoneNumber.text ?? ""
             currentUser!.photo = userImage.image ?? userImage.image
         }
-        else {
+        else
+        {
             let navi = segue.destinationViewController as! UINavigationController
             let secondScene = navi.viewControllers.first as! ProfileViewController
             
@@ -88,7 +97,8 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     // MARK: UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
         // Hide Keyboard
         textField.resignFirstResponder()
         return true
@@ -96,12 +106,14 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
     
     // MARK: UIImagePickerControllerDelegate
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    {
         // Dismiss the picker if the user canceled
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
         // The info dictionary contains multiple representations of the image, and this uses the original.
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -129,7 +141,8 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         newUser.email = finalEmail
         
         // Sign up the user asynchronously
-        newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+        newUser.signUpInBackgroundWithBlock(
+        { (succeed, error) -> Void in
             
             // Stop the spinner
             spinner.stopAnimating()
@@ -142,11 +155,12 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
             {
                 var alert = UIAlertView(title: "Success", message: "Signed Up", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
-//                saveProfile()
+                //                saveProfile()
             }
-        })
-
- 
+        }
+        )
+        
+        
         currentUser!.email = userEmail.text ?? ""
         currentUser!.firstName = userFirstName.text ?? ""
         currentUser!.lastName = userLastName.text ?? ""
@@ -155,19 +169,23 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         saveProfile()
     }
     
-    @IBAction func cancel(sender: UIBarButtonItem) {
+    @IBAction func cancel(sender: UIBarButtonItem)
+    {
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddMealMode
+        {
             dismissViewControllerAnimated(true, completion: nil)
         }
-        else {
+        else
+        {
             navigationController!.popViewControllerAnimated(true)
         }
     }
     
-    @IBAction func selectImageFromPhotoLibary(sender: UITapGestureRecognizer) {
+    @IBAction func selectImageFromPhotoLibary(sender: UITapGestureRecognizer)
+    {
         // Hide the keyboard
         userEmail.resignFirstResponder()
         userFirstName.resignFirstResponder()
@@ -188,14 +206,17 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
         
     }
     
-    // MARK: NSCoding
-    func saveProfile() {
+    // MARK: Save
+    func saveProfile()
+    {
         let possibleUser = currentUser ?? nil
         
-        if possibleUser!.isEqual(nil) {
+        if possibleUser!.isEqual(nil)
+        {
             print("no user")
         }
-        else {
+        else
+        {
             
             // save to database
             let profileObject = PFObject(className:"Users")
@@ -204,20 +225,10 @@ class CreateProfileViewController: UIViewController, UITextFieldDelegate, UIImag
             profileObject["firstName"] = possibleUser?.firstName
             profileObject["lastName"] = possibleUser?.lastName
             profileObject["phoneNumber"] = possibleUser?.phoneNumber
-            profileObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            profileObject.saveInBackgroundWithBlock
+            { (success: Bool, error: NSError?) -> Void in
                 print("Object has been saved.")
             }
-            
-            // old save
-            profiles.append(possibleUser!)
-            let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(profiles, toFile: Profile.ArchiveURL.path!)
-            
-            if !isSuccessfulSave {
-                print("Failed to save meals...")
-            }
-            
         }
     }
-    
-    
 }

@@ -11,7 +11,7 @@ import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var user : Profile?
+    var currentUser : Profile?
     var profiles : [Profile]? = [Profile]()
     var emailMatch = false
     
@@ -24,12 +24,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
-        // not needed anymore; built a search engine
-        if let savedProfiles = loadProfiles() {
-            profiles? += savedProfiles
-        }
-        printUserLog()
     }
     
     // MARK: UITextFieldDelegate
@@ -45,8 +39,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Action
-    
-    @IBAction func loginAccess(sender: AnyObject) {
+    //sends to profileviewwindow or creatprofileviewwindow
+    @IBAction func loginAccess(sender: AnyObject)
+    {
         
         var password = passwordTextField.text
         var email = emailTextField.text
@@ -56,7 +51,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // ==============================================================
         // looking to access password
-        if password!.characters.count < 8 {
+        if password!.characters.count < 8
+        {
             var alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
@@ -73,23 +69,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             spinner.startAnimating()
             
             // Send a request to login
-            PFUser.logInWithUsernameInBackground(email!, password: password!, block: { (user, error) -> Void in
+            PFUser.logInWithUsernameInBackground(email!, password: password!, block:
+                { (user, error) -> Void in
                 
                 // Stop the spinner
                 spinner.stopAnimating()
                 
-                if ((user) != nil) {
+                if ((user) != nil)
+                {
                     var alert = UIAlertView(title: "Success", message: "Logged In", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                     
-                    // switch to homescreen
-                    //self.performSegueWithIdentifier("UserMatch", sender: self)
-                    //                                return
                     
                     //                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     //                                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Home") as! UIViewController
                     //                                    self.presentViewController(viewController, animated: true, completion: nil)
                     //                                })
+                    
                     
                     
                     
@@ -100,8 +96,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     query.whereKey("password", equalTo: password!)
                     
                     query.getFirstObjectInBackgroundWithBlock
-                        {
-                            (object: PFObject?, error: NSError?) -> Void in
+                        {(object: PFObject?, error: NSError?) -> Void in
+                            
                             // no user found create a new one
                             if error != nil || object == nil
                             {
@@ -113,42 +109,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             {
                                 // The find succeeded.
                                 print("Returning user")
+                                
+                                // pull data from database
+                                print(object?.objectId)
+                                let email = object!["email"] ?? "no data"
+                                let password = object!["password"] ?? "no data"
+                                let firstName = object!["firstName"] ?? "no data"
+                                let lastName = object!["lastName"] ?? "no data"
+                                let phoneNumber = object!["phoneNumber"] ?? "no data"
+                                
+                                self.currentUser = Profile()
+                                
+                                self.currentUser?.email = email as! String
+                                print(self.currentUser?.email)
+                                self.currentUser?.password = password as! String
+                                self.currentUser?.firstName = firstName as! String
+                                self.currentUser?.lastName = lastName as! String
+                                self.currentUser?.phoneNumber = phoneNumber as! String
+                                
+                                self.performSegueWithIdentifier("UserMatch", sender: self)
+                                return
+                                
                             }
                     }
-                    
-                    
                 }
                 else
                 {
-                    var alert = UIAlertView(title: "Login Unsuccessful", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+                    let alert = UIAlertView(title: "Login Unsuccessful", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
                 }
             })
             
-        }
-        user = Profile(email: emailTextField.text!, password: passwordTextField.text!, firstName: nil, lastName: nil, phoneNumber: nil, photo: nil)
-        
-        // check for valid login on device
-        for possibleCurrentUser in profiles!
-        {
-            // checked device for user
-            if user!.email == possibleCurrentUser.email
-            {
-                if user!.password == possibleCurrentUser.password
-                {
-                    // valid - send to...
-                    print("We have a match")
-                    user = possibleCurrentUser
-                    self.performSegueWithIdentifier("UserMatch", sender: self)
-                    return
-                }
-                else
-                {
-                    print("Emails match but password doesn't.... Try again")
-                    emailMatch = true
-                    return
-                }
-            }
         }
         // not valid - send to create a profile window
     }
@@ -175,7 +166,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let navi = segue.destinationViewController as! UINavigationController
             let profileView = navi.viewControllers.first as! ProfileViewController
             
-            profileView.currentUser = user
+            profileView.currentUser = currentUser
             
         }
         else if segue.identifier == "HomeScreen" {
@@ -184,14 +175,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         else {
             let firstScene = segue.destinationViewController as! CreateProfileViewController
             
-            firstScene.currentUser = user
+            firstScene.currentUser = currentUser
             firstScene.profiles = profiles!
         }
-    }
-    
-    // MARK: NSCoding
-    func loadProfiles() -> [Profile]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Profile.ArchiveURL.path!) as? [Profile]
     }
     
     // MARK: Security Check
